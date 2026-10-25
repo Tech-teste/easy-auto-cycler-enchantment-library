@@ -1,0 +1,7 @@
+**/.gradle/
+**/build/
+**/libs/*.jar
+*.log
+.env*
+Thumbs.db
+.DS_Store
