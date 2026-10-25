@@ -1,0 +1,5 @@
+# Origem do projeto / Project disclosure
+
+Este addon foi criado para meu uso próprio nos meus modpacks. Todo o código, as adaptações entre versões e as traduções deste addon foram feitos pelo Codex, da OpenAI, seguindo meus pedidos. Eu não sou desenvolvedor de mods nem especialista no assunto. Estou compartilhando o resultado porque pode ser útil para outras pessoas. É um projeto experimental, compartilhado como está, que pode conter bugs e incompatibilidades; não é um produto com suporte profissional. Essa informação se refere apenas a este addon, não aos mods originais dos quais ele depende.
+
+This addon was created for my own use in my modpacks. All code, version adaptations and translations for this addon were produced by OpenAI Codex, following my requests. I am not a mod developer or a modding expert. I am sharing the result because it may be useful to others. This is an experimental project, shared as is, and may contain bugs or compatibility issues; it is not a professionally supported product. This disclosure applies only to this addon, not to the original mods it depends on.
