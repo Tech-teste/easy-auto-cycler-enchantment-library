@@ -1,50 +1,53 @@
 # Easy Auto Cycler Addon — Enchantment Library
 
-Biblioteca de Encantamentos · PT-BR / English · NeoForge · MIT
+Biblioteca de Encantamentos · **1.2.0 Beta** · PT-BR / English · NeoForge · MIT
 
-![PT-BR interface](https://media.forgecdn.net/attachments/2104/568/01-biblioteca-pt-br-png.png)
+![Biblioteca 1.2.0](https://media.forgecdn.net/attachments/2104/940/120-biblioteca-pt-br-png.png)
 
 ## Português brasileiro
 
-Addon independente para escolher livros encantados nos filtros do Easy Auto Cycler, com busca, categorias de equipamento e descrições. Requer **Easy Auto Cycler e Easy Villagers**. Não adiciona blocos, ofertas ou encantamentos. Instalação do addon somente no cliente.
+Addon independente para configurar os livros que o Easy Auto Cycler procura nas trocas do Easy Villagers. Inclui busca por nome, mod ou ID, categorias de equipamento, mod de origem, favoritos por estrela, listas salvas e revisão dos livros marcados. Interface em português brasileiro ou inglês conforme o idioma do Minecraft.
 
-[Baixar no CurseForge](https://www.curseforge.com/minecraft/mc-mods/easy-auto-cycler-biblioteca-de-encantamentos) · [Descrição completa e imagens](DESCRIPTION.md) · [Problemas e sugestões](https://github.com/Tech-teste/easy-auto-cycler-enchantment-library/issues)
+[CurseForge](https://www.curseforge.com/minecraft/mc-mods/easy-auto-cycler-biblioteca-de-encantamentos) · [Descrição completa e imagens](DESCRIPTION.md) · [Mudanças da 1.2.0](CHANGELOG-1.2.0.md) · [Relatar problema](https://github.com/Tech-teste/easy-auto-cycler-enchantment-library/issues)
 
-### Código-fonte completo
+### Instalar e usar
 
-- [Minecraft 1.21.1 — baixar fontes e Gradle wrapper](easy-auto-cycler-addon-1.21.1-1.0.9-sources.zip) · [Conferir o código no navegador](SOURCE-1.21.1.md)
-- [Minecraft 26.1.2 — baixar fontes e Gradle wrapper](easy-auto-cycler-addon-26.1.2-1.0.9-sources.zip) · [Conferir o código no navegador](SOURCE-26.1.2.md)
+Requer **NeoForge, Easy Auto Cycler e Easy Villagers**, com as versões compatíveis abaixo. O addon é instalado somente no cliente; Easy Villagers segue seus próprios requisitos de cliente/servidor. Abra os filtros habituais do Auto Cycler, escolha os livros e clique em **Salvar e aplicar**. Depois use o controle normal do Auto Cycler para começar a busca.
 
-Os ZIPs preservam a estrutura completa dos projetos. Os documentos SOURCE são cópias para leitura no navegador, incluindo Java, configurações e traduções. Não incluem os binários dos mods originais, dados de conta ou mundos.
+As estrelas guardam favoritos. Em Listas salvas, você pode guardar até 32 seleções com nome, níveis, preços, itens de pagamento e modo de busca. Carregar uma lista muda apenas a seleção em edição, ignora encantamentos indisponíveis e informa a quantidade: revise antes de aplicar. Limpar marcados pede confirmação; filtros avançados permanecem intactos. Cancelar descarta as edições de filtros, mas mantém favoritos e listas que você já salvou.
 
-### Compilar
+Favoritos e listas ficam em `config/easy-auto-cycler-library.json`, com uma cópia anterior `.bak`. O arquivo pode ser copiado para outros packs. Filtros e preferências das versões anteriores continuam compatíveis. Arquivos SOURCE e ZIPs 1.0.9 foram preservados como histórico; o código atual está nas pastas abaixo.
 
-| Pasta | Minecraft | Java | NeoForge | Easy Auto Cycler |
+### Código-fonte e compilação
+
+| Pasta | Minecraft | Java | NeoForge de compilação | Easy Auto Cycler |
 | --- | --- | --- | --- | --- |
-| minecraft-1.21.1 | 1.21.1 | 21 | 21.1.248 | 3.1.0 |
-| minecraft-26.1.2 | 26.1.2 | 25 | 26.1.2.121 | 3.1.2 |
+| [minecraft-1.21.1](minecraft-1.21.1) | 1.21.1 | 21 | 21.1.248 | 3.1.0 |
+| [minecraft-26.1.2](minecraft-26.1.2) | 26.1.2 | 25 | 26.1.2.121 | 3.1.2 |
 
-1. Baixe e extraia o ZIP de fontes da versão escolhida; instale o JDK correspondente e configure JAVA_HOME.
-2. Baixe o jar original do [Easy Auto Cycler](https://www.curseforge.com/minecraft/mc-mods/easy-auto-cycler), para a mesma versão e NeoForge, e coloque em libs/ dentro da pasta correspondente. Consulte libs/README.md para o nome exato. Os mods originais não são redistribuídos aqui.
-3. Nessa pasta, execute `./gradlew build` (Windows: `gradlew.bat build`). No Linux, use `chmod +x gradlew` antes.
-4. O jar está em build/libs/. Os testes de integração e traduções são executados durante o build.
+1. Clone este repositório ou baixe os fontes. Selecione a pasta da sua versão e configure o JDK indicado em JAVA_HOME.
+2. Baixe o jar original Easy Auto Cycler, da versão indicada e NeoForge, e coloque em `libs/`. O nome exato está em `libs/README.md`. Os mods originais não são redistribuídos aqui.
+3. Execute `gradlew.bat build` no Windows. No Linux, execute `chmod +x gradlew` e `./gradlew build`.
+4. O jar gerado fica em `build/libs/`. A compilação executa os testes de integração, idiomas e persistência da biblioteca.
 
-### Origem e estado
+### Testes e origem
 
-Projeto criado para uso próprio em modpacks. Todo o código, ports e traduções foram produzidos pelo Codex, da OpenAI, seguindo os pedidos do proprietário, que não é desenvolvedor de mods nem especialista. Veja [NOTICE.md](NOTICE.md). Projeto experimental, compartilhado como está, sem promessa de suporte profissional.
+Os dois builds passaram nos testes de integração e traduções. A 1.21.1 foi conferida em uma instalação de teste separada; a 26.1.2, em um mundo de teste separado do FTB Evolution 2. Foram verificados PT-BR/inglês, carregar listas com encantamentos ausentes, preservar pagamento e modo, cancelar sem alterar filtros ativos, limpar com confirmação e salvar. Capturas da interface são reais; a logo ilustrativa foi gerada com IA.
 
-1.0.9 atualiza nome público, logo e dependência explícita de Easy Villagers. O código das telas é o mesmo da versão anterior: a 26.1.2 foi conferida em PT-BR e inglês em mundo de teste separado do FTB Evolution 2; uma nova conferência visual da 1.21.1 está pendente. Os prints são reais. A logo foi gerada com IA. O identificador interno legado é mantido para compatibilidade com as configurações existentes.
+Projeto criado para uso próprio em modpacks. **Todo o código, ports e traduções foram produzidos pelo Codex, da OpenAI, seguindo os pedidos do proprietário, que não é desenvolvedor de mods nem especialista.** Veja [NOTICE.md](NOTICE.md). É um projeto experimental, compartilhado como está. O identificador interno legado foi mantido para preservar as configurações.
 
 ## English
 
-Independent addon for selecting enchanted books in Easy Auto Cycler filters, with search, equipment categories and enchantment descriptions. Requires **Easy Auto Cycler and Easy Villagers**. Adds no blocks, offers or enchantments. Install the addon on the client only.
+Independent client addon for choosing enchanted books in Easy Auto Cycler filters, for the Easy Villagers workflow. Features searchable equipment categories, source mod labels, starred favorites, named reusable lists, selected-book review, confirmed clear, explicit payment limits and a clearer Save and apply action. The interface follows Minecraft's language setting: English or Brazilian Portuguese.
 
-Complete buildable projects are in the two sources ZIPs above. SOURCE documents provide browser-readable copies of all Java, metadata, build files and translations. To build, download and extract the matching source ZIP, install its JDK, set JAVA_HOME, download the matching original Easy Auto Cycler NeoForge jar into that folder's libs/ directory, and run `./gradlew build` (`gradlew.bat build` on Windows). See libs/README.md for the exact filename. Output is in build/libs/. Integration and language checks run during build. Original dependency binaries are not included.
+Requires matching NeoForge, Easy Auto Cycler and Easy Villagers. Favorites and up to 32 named lists are stored separately in `config/easy-auto-cycler-library.json`, with a previous `.bak` copy. Lists store levels, prices, payment items and match mode. Loading edits the draft only and reports unavailable enchantments; review before clicking Save and apply. Advanced filters remain preserved. Cancel discards draft filter edits while keeping already-saved favorites and lists.
 
-This is a personal, experimental modpack project. All addon code, ports and translations were produced by OpenAI Codex at the owner's request. The owner is not a mod developer or modding expert. See [NOTICE.md](NOTICE.md). Version 1.0.9 changes branding and dependency metadata; screen code is unchanged from the previous build. Minecraft 26.1.2 was visually checked in a separate FTB Evolution 2 test world in both languages; a fresh 1.21.1 visual check is pending. Screenshots are real; the logo was AI-generated.
+Source projects are directly browsable in the two version folders above. Install the JDK from the table, put the separately downloaded original Easy Auto Cycler jar in that project's libs directory, and run the Gradle wrapper build task. Output is in build/libs/. Integration, localization and library-persistence checks run during build. Original dependency binaries are not included. Legacy SOURCE documents and 1.0.9 archives are preserved as history.
+
+Both Minecraft interfaces were checked in separate test worlds in English and PT-BR, including list loading, missing IDs, payment/mode restore, Cancel isolation, confirmed clear and actual filter saving. This personal experimental project was built entirely through OpenAI Codex at the owner's request; the owner is not a mod developer or modding expert. See NOTICE.md. Screenshots are real; the logo was AI-generated.
 
 ## Credits
 
 - [Easy Auto Cycler](https://www.curseforge.com/minecraft/mc-mods/easy-auto-cycler) by Uncraftbar.
 - [Easy Villagers](https://www.curseforge.com/minecraft/mc-mods/easy-villagers) by henkelmax.
-- This unofficial addon is independent of both projects and their authors. The MIT license covers this addon's code, not the original mods.
+- This unofficial addon is independent of both projects. The MIT license covers this addon's code, not the original mods.
