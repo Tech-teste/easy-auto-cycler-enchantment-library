@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'net.neoforged.moddev' version '2.0.141'
+}
+version = '1.2.0'
+group = 'br.com.du'
+base { archivesName = 'easy-auto-cycler-addon-26.1.2' }
+java { toolchain { languageVersion = JavaLanguageVersion.of(25) } }
+neoForge { version = '26.1.2.121' }
+sourceSets {
+    main {
+        java.srcDirs = ['src']
+        resources.srcDirs = ['resources']
+    }
+}
+dependencies { implementation files('libs/easyautocycler-neoforge-26.1.2-3.1.2.jar') }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+sourceSets {
+    integration {
+        java.srcDirs = ['tests']
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+tasks.register('integrationCheck', JavaExec) {
+    dependsOn integrationClasses
+    classpath = sourceSets.integration.runtimeClasspath
+    mainClass = 'br.com.du.enchantbrowser.IntegrationCheck'
+    workingDir = layout.buildDirectory.dir('integration-sandbox').get().asFile
+    doFirst { workingDir.mkdirs() }
+}
+tasks.named('check') { dependsOn integrationCheck }
+
