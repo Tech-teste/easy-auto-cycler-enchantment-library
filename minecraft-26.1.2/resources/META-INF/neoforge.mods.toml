@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="du_enchant_browser"
+version="1.2.0"
+displayName="Easy Auto Cycler Addon - Enchantment Library / Biblioteca de Encantamentos"
+authors="Personal project, built with OpenAI Codex"
+logoFile="logo.png"
+description='''Client-side enchantment search, equipment categories and trade filters for Easy Auto Cycler 3.1.2. English and Brazilian Portuguese interface. Biblioteca de encantamentos com busca, categorias e descricoes.'''
+[[dependencies.du_enchant_browser]]
+modId="neoforge"
+type="required"
+versionRange="[26.1.2.121,)"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.du_enchant_browser]]
+modId="minecraft"
+type="required"
+versionRange="[26.1.2,26.1.3)"
+ordering="NONE"
+side="CLIENT"
+[[dependencies.du_enchant_browser]]
+modId="easyautocycler"
+type="required"
+versionRange="[3.1.2,3.1.3)"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.du_enchant_browser]]
+modId="easy_villagers"
+type="required"
+versionRange="[1.1.42,)"
+ordering="AFTER"
+side="CLIENT"
